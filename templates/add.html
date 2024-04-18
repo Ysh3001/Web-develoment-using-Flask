@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% from 'bootstrap5/form.html' import render_form %}
+{% block title %}Add A New Cafe{% endblock %}
+
+{% block content %}
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12 col-md-8">
+        {% if req %}
+          <h1>Submission completed</h1>
+          <h2>Add another cafe</h2>
+        {% else %}
+           <h1>Add cafe</h1>
+        {% endif %}
+
+      {{ render_form(form) }}
+
+	  <p class="space-above"><a href="{{url_for('cafes')}}">See all cafes</a></p>
+
+    </div>
+  </div>
+</div>
+
+{% endblock %}
